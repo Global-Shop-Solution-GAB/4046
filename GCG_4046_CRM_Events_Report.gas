@@ -1,0 +1,780 @@
+Program.Sub.ScreenSU.Start
+gui.SS_Form1..create
+gui.SS_Form1..caption("CRM Events Report")
+gui.SS_Form1..size(6105,6525)
+gui.SS_Form1..minx(0)
+gui.SS_Form1..miny(0)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,SS_Form1_Unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+gui.SS_Form1.lbl_dtpStart.create(label,"Beginning Date",True,1800,195,1,105,105,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_dtpStart.defaultvalue("")
+gui.SS_Form1.lbl_dtpStart.controlgroup(0)
+gui.SS_Form1.dtpStart.create(datepicker)
+gui.SS_Form1.dtpStart.visible(True)
+gui.SS_Form1.dtpStart.size(1800,345)
+gui.SS_Form1.dtpStart.zorder(0)
+gui.SS_Form1.dtpStart.position(100,335)
+gui.SS_Form1.dtpStart.enabled(True)
+gui.SS_Form1.dtpStart.checkbox(False)
+gui.SS_Form1.dtpStart.defaultvalue("")
+gui.SS_Form1.dtpStart.controlgroup(0)
+gui.SS_Form1.lbl_dtpEnd.create(label,"Ending Date",True,1800,195,1,2520,105,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_dtpEnd.defaultvalue("")
+gui.SS_Form1.lbl_dtpEnd.controlgroup(0)
+gui.SS_Form1.dtpEnd.create(datepicker)
+gui.SS_Form1.dtpEnd.visible(True)
+gui.SS_Form1.dtpEnd.size(1800,345)
+gui.SS_Form1.dtpEnd.zorder(0)
+gui.SS_Form1.dtpEnd.position(2520,335)
+gui.SS_Form1.dtpEnd.enabled(True)
+gui.SS_Form1.dtpEnd.checkbox(False)
+gui.SS_Form1.dtpEnd.defaultvalue("")
+gui.SS_Form1.dtpEnd.controlgroup(0)
+gui.SS_Form1.chkAllDates.create(checkbox)
+gui.SS_Form1.chkAllDates.caption("All Dates")
+gui.SS_Form1.chkAllDates.visible(True)
+gui.SS_Form1.chkAllDates.size(1800,300)
+gui.SS_Form1.chkAllDates.zorder(0)
+gui.SS_Form1.chkAllDates.position(105,840)
+gui.SS_Form1.chkAllDates.enabled(True)
+gui.SS_Form1.chkAllDates.alignment(0)
+gui.SS_Form1.chkAllDates.fontname("Arial")
+gui.SS_Form1.chkAllDates.fontsize(8)
+gui.SS_Form1.chkAllDates.event(click,chkAllDates_Click)
+gui.SS_Form1.chkAllDates.defaultvalue("")
+gui.SS_Form1.chkAllDates.controlgroup(0)
+gui.SS_Form1.lbl_txtEndCust.create(label,"Ending Customer",True,1800,200,1,2520,1185,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtEndCust.defaultvalue("")
+gui.SS_Form1.lbl_txtEndCust.controlgroup(0)
+gui.SS_Form1.txtEndCust.create(textbox,"",True,1485,330,0,2520,1440,True,0,Arial,8,16777215,1)
+gui.SS_Form1.txtEndCust.event(gotfocus,txtEndCust_GotFocus)
+gui.SS_Form1.txtEndCust.maxLength(6)
+gui.SS_Form1.txtEndCust.defaultvalue("")
+gui.SS_Form1.txtEndCust.controlgroup(0)
+gui.SS_Form1.cmdAdd.create(button)
+gui.SS_Form1.cmdAdd.caption("Add")
+gui.SS_Form1.cmdAdd.visible(True)
+gui.SS_Form1.cmdAdd.size(1005,360)
+gui.SS_Form1.cmdAdd.zorder(0)
+gui.SS_Form1.cmdAdd.position(4830,1440)
+gui.SS_Form1.cmdAdd.enabled(True)
+gui.SS_Form1.cmdAdd.fontname("Arial")
+gui.SS_Form1.cmdAdd.fontsize(8)
+gui.SS_Form1.cmdAdd.event(click,cmdAdd_Click)
+gui.SS_Form1.cmdAdd.defaultvalue("")
+gui.SS_Form1.cmdAdd.controlgroup(0)
+gui.SS_Form1.chkAllCust.create(checkbox)
+gui.SS_Form1.chkAllCust.caption("All Customers")
+gui.SS_Form1.chkAllCust.visible(True)
+gui.SS_Form1.chkAllCust.size(1800,300)
+gui.SS_Form1.chkAllCust.zorder(0)
+gui.SS_Form1.chkAllCust.position(105,1935)
+gui.SS_Form1.chkAllCust.enabled(True)
+gui.SS_Form1.chkAllCust.alignment(0)
+gui.SS_Form1.chkAllCust.fontname("Arial")
+gui.SS_Form1.chkAllCust.fontsize(8)
+gui.SS_Form1.chkAllCust.event(click,chkAllCust_Click)
+gui.SS_Form1.chkAllCust.defaultvalue("")
+gui.SS_Form1.chkAllCust.controlgroup(0)
+gui.SS_Form1.cmdDelete.create(button)
+gui.SS_Form1.cmdDelete.caption("Delete")
+gui.SS_Form1.cmdDelete.visible(True)
+gui.SS_Form1.cmdDelete.size(1005,360)
+gui.SS_Form1.cmdDelete.zorder(0)
+gui.SS_Form1.cmdDelete.position(105,4500)
+gui.SS_Form1.cmdDelete.enabled(True)
+gui.SS_Form1.cmdDelete.fontname("Arial")
+gui.SS_Form1.cmdDelete.fontsize(8)
+gui.SS_Form1.cmdDelete.event(click,cmdDelete_Click)
+gui.SS_Form1.cmdDelete.defaultvalue("")
+gui.SS_Form1.cmdDelete.controlgroup(0)
+gui.SS_Form1.cmdClear.create(button)
+gui.SS_Form1.cmdClear.caption("Clear")
+gui.SS_Form1.cmdClear.visible(True)
+gui.SS_Form1.cmdClear.size(1005,360)
+gui.SS_Form1.cmdClear.zorder(0)
+gui.SS_Form1.cmdClear.position(1185,4500)
+gui.SS_Form1.cmdClear.enabled(True)
+gui.SS_Form1.cmdClear.fontname("Arial")
+gui.SS_Form1.cmdClear.fontsize(8)
+gui.SS_Form1.cmdClear.event(click,cmdClear_Click)
+gui.SS_Form1.cmdClear.defaultvalue("")
+gui.SS_Form1.cmdClear.controlgroup(0)
+gui.SS_Form1.cmdPrint.create(button)
+gui.SS_Form1.cmdPrint.caption("Print")
+gui.SS_Form1.cmdPrint.visible(True)
+gui.SS_Form1.cmdPrint.size(1005,360)
+gui.SS_Form1.cmdPrint.zorder(0)
+gui.SS_Form1.cmdPrint.position(105,5625)
+gui.SS_Form1.cmdPrint.enabled(True)
+gui.SS_Form1.cmdPrint.fontname("Arial")
+gui.SS_Form1.cmdPrint.fontsize(8)
+gui.SS_Form1.cmdPrint.event(click,cmdPrint_Click)
+gui.SS_Form1.cmdPrint.defaultvalue("")
+gui.SS_Form1.cmdPrint.controlgroup(0)
+gui.SS_Form1.lbl15.create(label,"Beginning Customer",True,1575,225,1,105,1185,True,0,Arial,8,0,0)
+gui.SS_Form1.lbl15.defaultvalue("")
+gui.SS_Form1.lbl15.controlgroup(0)
+gui.SS_Form1.cmdBegCustBr.create(button)
+gui.SS_Form1.cmdBegCustBr.caption("^")
+gui.SS_Form1.cmdBegCustBr.visible(True)
+gui.SS_Form1.cmdBegCustBr.size(510,345)
+gui.SS_Form1.cmdBegCustBr.zorder(0)
+gui.SS_Form1.cmdBegCustBr.position(1785,1455)
+gui.SS_Form1.cmdBegCustBr.enabled(True)
+gui.SS_Form1.cmdBegCustBr.fontname("Arial")
+gui.SS_Form1.cmdBegCustBr.fontsize(7)
+gui.SS_Form1.cmdBegCustBr.event(click,cmdBegCustBr_Click)
+gui.SS_Form1.cmdBegCustBr.defaultvalue("")
+gui.SS_Form1.cmdBegCustBr.controlgroup(0)
+gui.SS_Form1.cmdECustB.create(button)
+gui.SS_Form1.cmdECustB.caption("^")
+gui.SS_Form1.cmdECustB.visible(True)
+gui.SS_Form1.cmdECustB.size(510,345)
+gui.SS_Form1.cmdECustB.zorder(0)
+gui.SS_Form1.cmdECustB.position(4095,1455)
+gui.SS_Form1.cmdECustB.enabled(True)
+gui.SS_Form1.cmdECustB.fontname("Arial")
+gui.SS_Form1.cmdECustB.fontsize(7)
+gui.SS_Form1.cmdECustB.event(click,cmdBegCustBr_Click)
+gui.SS_Form1.cmdECustB.defaultvalue("")
+gui.SS_Form1.cmdECustB.controlgroup(0)
+gui.SS_Form1.lvwCusts.create(listview)
+gui.SS_Form1.lvwCusts.view(3)
+gui.SS_Form1.lvwCusts.visible(True)
+gui.SS_Form1.lvwCusts.size(5880,2130)
+gui.SS_Form1.lvwCusts.zorder(0)
+gui.SS_Form1.lvwCusts.position(60,2280)
+gui.SS_Form1.lvwCusts.enabled(True)
+gui.SS_Form1.lvwCusts.borderstyle(1)
+gui.SS_Form1.lvwCusts.fontname("Arial")
+gui.SS_Form1.lvwCusts.fontsize(7)
+gui.SS_Form1.txtBegCust.create(textbox,"",True,1485,330,0,105,1440,True,0,Arial,8,16777215,1)
+gui.SS_Form1.txtBegCust.event(gotfocus,txtBegCust_GotFocus)
+gui.SS_Form1.txtBegCust.maxLength(6)
+gui.SS_Form1.txtBegCust.event(lostfocus,txtBegCust_LostFocus)
+gui.SS_Form1.txtBegCust.defaultvalue("")
+gui.SS_Form1.txtBegCust.controlgroup(0)
+gui.SS_Form1.chkOpen.create(checkbox)
+gui.SS_Form1.chkOpen.caption("Open Events Only")
+gui.SS_Form1.chkOpen.visible(True)
+gui.SS_Form1.chkOpen.size(2790,360)
+gui.SS_Form1.chkOpen.zorder(0)
+gui.SS_Form1.chkOpen.position(105,5055)
+gui.SS_Form1.chkOpen.enabled(True)
+gui.SS_Form1.chkOpen.alignment(0)
+gui.SS_Form1.chkOpen.fontname("Arial")
+gui.SS_Form1.chkOpen.fontsize(7)
+gui.SS_Form1.chkOpen.defaultvalue("")
+gui.SS_Form1.chkOpen.controlgroup(0)
+gui.SS_Form1.dtpStart.tabstop(True)
+gui.SS_Form1.dtpStart.tabindex(1)
+gui.SS_Form1.dtpEnd.tabstop(True)
+gui.SS_Form1.dtpEnd.tabindex(2)
+gui.SS_Form1.chkAllDates.tabstop(True)
+gui.SS_Form1.chkAllDates.tabindex(3)
+gui.SS_Form1.txtBegCust.tabstop(True)
+gui.SS_Form1.txtBegCust.tabindex(4)
+gui.SS_Form1.cmdBegCustBr.tabstop(True)
+gui.SS_Form1.cmdBegCustBr.tabindex(5)
+gui.SS_Form1.txtEndCust.tabstop(True)
+gui.SS_Form1.txtEndCust.tabindex(6)
+gui.SS_Form1.cmdECustB.tabstop(True)
+gui.SS_Form1.cmdECustB.tabindex(7)
+gui.SS_Form1.cmdAdd.tabstop(True)
+gui.SS_Form1.cmdAdd.tabindex(8)
+gui.SS_Form1.cmdDelete.tabstop(True)
+gui.SS_Form1.cmdDelete.tabindex(9)
+gui.SS_Form1.cmdClear.tabstop(True)
+gui.SS_Form1.cmdClear.tabindex(10)
+gui.SS_Form1.chkOpen.tabstop(True)
+gui.SS_Form1.chkOpen.tabindex(11)
+gui.SS_Form1.cmdPrint.tabstop(True)
+gui.SS_Form1.cmdPrint.tabindex(12)
+gui.SS_Form1.chkAllCust.tabstop(True)
+gui.SS_Form1.chkAllCust.tabindex(13)
+gui.SS_Form1.lvwCusts.tabstop(True)
+gui.SS_Form1.lvwCusts.tabindex(14)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.UDT.uBI.Define("BIRUNID",Long,)
+Variable.UDT.uBI.Define("CUSTOMER",String,COMPID)
+Variable.UDT.uBI.Define("CREATOR",String,CREATOR)
+
+Variable.UDT.uBI.Define("DESCRIPTION",String,DESCRIPTION)
+Variable.UDT.uBI.Define("START_DATETIME",String,START_DATETIME)
+Variable.UDT.uBI.Define("END_DATETIME",String,END_DATETIME)
+Variable.UDT.uBI.Define("PRIORITY",String,PRIORITY)
+Variable.UDT.uBI.Define("CLOSED_FLAG",Long,CLOSED_FLAG)
+Variable.UDT.uBI.Define("NAME_CUSTOMER",String)
+Variable.UDT.uBI.Define("CITY_SHIP",String)
+Variable.UDT.uBI.Define("STATE_SHIP",String)
+Variable.UDT.uBI.Define("TYPE",String,TValue)
+Variable.UDT.uBI.Define("STATUS",String,SVALUE)
+Variable.UDT.uBI.Define("TITLE",String,TITLE)
+
+Variable.uGlobal.uBI.Declare("uBI")
+variable.Global.iKey.Declare(Long,0)
+Variable.Global.iBIRUNID.Declare(Long,0)
+Variable.Global.iBILOGID.Declare(Long,0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'THIS IS IN THE NEW CODE EDITOR SO HERE WE GO
+
+'QUOTE Whatever for MIR
+'coded by TRT
+'2/9/15
+
+'global common connection
+F.ODBC.Connection!conC.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+'open conneciton.
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+Gui.SS_Form1..Show
+
+'we have to add a few things here cause it's lacking in formdeisng
+Gui.SS_Form1.lvwCusts.AddListViewColumn("Beginning Customer",2910,0)
+Gui.SS_Form1.lvwCusts.AddListViewColumn("Ending Customer",2910,0)
+'running from a custom menu item.
+
+Program.Sub.Main.End
+
+Program.Sub.cmdAdd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdAdd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sBCust.Declare(String)
+v.Local.sECust.Declare(STring)
+
+v.Local.sBCust.Set(v.Screen.SS_Form1!txtBegCust.text)
+v.Local.sECust.Set(v.Screen.SS_Form1!txtEndCust.text)
+
+F.Intrinsic.Control.If(v.Local.sBCust.Trim,=,"")
+	gui.SS_Form1.txtBegCust.SetFocus
+	f.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(v.Local.sECust.Trim,=,"")
+	gui.SS_Form1.txtEndCust.SetFocus
+	Function.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	'grab our stuff and add it to our list view.
+	f.Intrinsic.Math.Add(V.Global.ikey,1,V.Global.ikey)
+	Gui.SS_Form1.lvwCusts.AddListItem(V.Global.ikey,V.Screen.SS_Form1!txtBegCust.Text)
+	gui.SS_Form1.lvwCusts.SetListItemSubItemText(V.Global.ikey,1,V.Screen.SS_Form1!txtEndCust.Text)
+	Gui.SS_Form1.txtBegCust.Text("")
+	Gui.SS_Form1.txtEndCust.Text("")
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdAdd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.chkAllDates_Click.Start
+F.Intrinsic.Control.SetErrorHandler("chkAllDates_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Function.Intrinsic.Control.If(V.Screen.SS_Form1!chkAllDates.Value,=,1)
+	gui.SS_Form1.dtpStart.Enabled(False)
+	gui.SS_Form1.dtpEnd.Enabled(False)
+Function.Intrinsic.Control.Else
+	gui.SS_Form1.dtpStart.Enabled(True)
+	gui.SS_Form1.dtpEnd.Enabled(True)
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkAllDates_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.chkAllDates_Click.End
+
+Program.Sub.chkAllCust_Click.Start
+F.Intrinsic.Control.SetErrorHandler("chkAllCust_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Function.Intrinsic.Control.If(V.Screen.SS_Form1!chkAllCust.Value,=,1)
+	Gui.SS_Form1.lvwCusts.ClearItems
+	Gui.SS_Form1.txtBegCust.Text("")
+	Gui.SS_Form1.txtEndCust.Text("")
+	GUi.SS_Form1.cmdAdd.Enabled(False)
+	Gui.SS_Form1.txtBegCust.Enabled(False)
+	Gui.SS_Form1.txtEndCust.Enabled(False)
+	Gui.SS_Form1.cmdBegCustBr.Enabled(False)
+	Gui.SS_Form1.cmdECustB.Enabled(False)
+	Gui.SS_Form1.cmdDelete.Enabled(False)
+	Gui.SS_Form1.lvwCusts.Enabled(False)
+	Gui.SS_Form1.cmdClear.Enabled(False)
+Function.Intrinsic.Control.Else
+	Gui.SS_Form1.lvwCusts.ClearItems
+	Gui.SS_Form1.txtBegCust.Text("")
+	Gui.SS_Form1.txtEndCust.Text("")
+	Gui.SS_Form1.txtBegCust.Enabled(True)
+	Gui.SS_Form1.txtEndCust.Enabled(True)
+	GUi.SS_Form1.cmdAdd.Enabled(True)
+	Gui.SS_Form1.cmdBegCustBr.Enabled(True)
+	Gui.SS_Form1.cmdECustB.Enabled(True)
+	Gui.SS_Form1.cmdDelete.Enabled(True)
+	Gui.SS_Form1.lvwCusts.Enabled(True)
+	Gui.SS_Form1.cmdClear.Enabled(True)
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkAllCust_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.chkAllCust_Click.End
+
+Program.Sub.cmdDelete_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdDelete_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+'remove a customer range
+
+V.Local.sError.Declare(String)
+v.Local.iKey.Declare(Long)
+
+v.Local.iKey.Set(v.Screen.SS_Form1!lvwCusts.SelectedItemKey)
+
+Gui.SS_Form1.lvwCusts.RemoveItem(v.Local.iKey)
+Gui.SS_Form1.txtBegCust.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdDelete_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.cmdClear_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdClear_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.lvwCusts.ClearItems
+Gui.SS_Form1.txtBegCust.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdClear_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.cmdPrint_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPrint_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sDateRange.Declare(String)
+V.Local.sCustRange.Declare(String)
+V.Local.iK.Declare(Long)
+V.Local.sRow.Declare(String)
+V.Local.iOrd.Declare(Long)
+V.Local.sRange.Declare(String)
+
+V.uGlobal.uBI.Redim(-1,-1)
+'hide our form
+Gui.SS_Form1..Visible(False)
+Function.Intrinsic.UI.InvokeWaitDialog("Processing...","Please wait...")
+
+'DELETE FROM OUR BI TABLE
+F.ODBC.Connection!conX.Execute("Delete From GCG_BI_CRM_Events")
+
+'first get our BIRUNID
+F.Global.BI.GetRunID(V.Global.iBIRUNID)
+
+'then get log id
+F.Global.BI.StartLogging(V.Global.iBIRUNID,-1,-1,"",V.Global.iBILOGID)
+
+'this sub will grab all our events that match the user enetered criteria,
+'then we are going to go to the check_security sub, and if they have a specific security we are going to flag any customers that they only have access to and leave them in the
+'bi file for printing.
+'E = CRM_Events Table
+'Type = CRM_Event_Type table
+'Status = CRM_Event_Status table
+V.Local.sSQL.Set("Select E.CompID,E.Creator,e.Title,E.Description,Type.Value As TValue,Status.Value As SValue,E.Start_DateTime,E.End_DateTime,E.Priority, Case When E.Close_DateTime Is Null Then '0' Else '1' End As Closed_Flag From CRM_Events As E Left Join CRM_Event_Type As Type On E.ETYPE = Type.SEQ Left Join CRM_Event_Status AS Status On  E.EType = Status.Seq")
+Function.Intrinsic.Control.If(V.Screen.SS_Form1!chkAllDates.Value,=,0)
+	'if they don't have all dates checked we reference our date pickers.
+	f.Intrinsic.String.Build("Cast(E.End_DateTime As Date) Between '{0}' And '{1}'",v.Screen.SS_Form1!dtpStart.Value.PervasiveDate,v.Screen.SS_Form1!dtpEnd.Value.PervasiveDate,v.Local.sDateRange)
+	Function.Intrinsic.Control.Else
+		V.Local.sDateRange.Set("")
+Function.Intrinsic.Control.EndIf
+
+'lets try to loop through our listview and build our cust range selection, then we hit the dtabase only once.
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkAllCust.Value,<>,1)
+	Gui.SS_Form1.lvwCusts.RetrieveAllListItems(V.Local.sRow)
+	F.Intrinsic.Control.If(V.Local.srow.Trim,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+		F.Intrinsic.Control.For(V.Local.iK,0,V.Local.sRow.UBound,1)
+			Gui.SS_Form1.lvwCusts.RetrieveItemOrdinal(V.Local.sRow(v.Local.iK).Trim,V.Local.iOrd)
+			V.Local.sRange.Set(V.Screen.SS_Form1!lvwCusts.ListItemTextExtended(v.Local.iOrd))
+			Function.Intrinsic.Control.If(V.Local.sRange.Trim,<>,"")
+				Function.Intrinsic.String.Split(V.Local.sRange,"*!*",V.Local.sRange)
+				Function.Intrinsic.String.SortAsc(V.Local.sRange,V.Local.sRange)
+				Function.Intrinsic.Control.If(V.Local.sCustRange.Trim,=,"")
+					Function.Intrinsic.String.Build("E.COMPID Between '{0}' And '{1}'",V.Local.sRange(1).Trim,V.Local.sRange(2).Trim,V.Local.sCustRange)
+				F.Intrinsic.Control.Else
+					Function.Intrinsic.String.Build("{2} OR E.COMPID Between '{0}' And '{1}'",V.Local.sRange(1).Trim,V.Local.sRange(2).Trim,V.Local.sCustRange,V.Local.sCustRange)
+				Function.Intrinsic.Control.EndIf
+			Function.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iK)
+	Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Function.Intrinsic.String.Build("{0}{1}",V.Screen.SS_Form1!chkAllDates.Value,V.Screen.SS_Form1!chkAllCust.Value,V.Local.sRange)
+Function.Intrinsic.Control.SelectCase(V.Local.srange)
+	Function.Intrinsic.Control.Case(01)
+'		means all dates isn't checked bu customer is
+		Function.Intrinsic.String.Build("{0} Where {1}",V.local.ssql,V.Local.sDateRange,V.Local.sSQL)
+	Function.Intrinsic.Control.Case(10)
+		'means all dates is checked, but not customer ranges
+		Function.Intrinsic.String.Build("{0} Where {1}",V.Local.sSQL,V.Local.sCustRange,V.Local.sSQL)
+	Function.Intrinsic.Control.Case(00)
+		'means neither one is checked so we have a range on both
+		Function.Intrinsic.String.Build("{0} Where {1} And {2}",V.Local.sSQL,V.Local.sDateRange,V.Local.sCustRange,V.Local.sSQL)
+	Function.Intrinsic.Control.CaseElse
+		Function.Intrinsic.Debug.SetLA("NO need to format anything its all cust and all dates? Case is : ",V.Local.sRange)
+'		Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndSelect
+Function.Intrinsic.Control.If(V.Local.sSQL.Trim,<>,"")
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+	Function.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","v.uglobal.uBI",False,100)
+	Function.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.close
+Function.Intrinsic.Control.EndIf
+
+'check our security
+Function.Intrinsic.Control.CallSub(Check_security)
+
+'if open events only checked removed any that have a closed_Flag of 1
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkOpen.Value,=,1)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uBI!CLOSED_FLAG,1)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uBI)
+F.Intrinsic.Control.EndIf
+
+F.Global.BI.StopLogging(V.Global.iBILogID)
+
+Function.Intrinsic.Control.If(V.uGlobal.uBI.UBound,<>,-1)
+	'meaning we still have some elements left.
+	'throw our bi id in their
+'	'meaning we still have some elements left.
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rst","Select * From GCG_BI_CRM_Events")
+	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uBI!BIRUNID,V.Global.iBIRUNID)
+	F.Intrinsic.Control.for(V.Local.iK,0,V.uGlobal.uBI.UBound,1)
+		F.ODBC.conX!rst.AddNew
+		F.ODBC.conX!rst.Set!BIRUNID(V.uGlobal.uBI(v.Local.ik)!BIRUNID)
+		F.ODBC.conX!rst.Set!Customer(V.uGlobal.uBI(v.Local.iK)!CUSTOMER)
+		F.ODBC.conX!rst.Set!Name_Customer(V.uGlobal.uBI(v.Local.iK)!NAME_CUSTOMER)
+		F.ODBC.conX!rst.Set!City_Ship(V.uGlobal.uBI(v.Local.iK)!CITY_SHIP)
+		F.ODBC.conX!rst.Set!State_Ship(V.uGlobal.uBI(v.Local.iK)!STATE_SHIP)
+		F.ODBC.conX!rst.Set!Creator(V.uGlobal.uBI(v.Local.iK)!CREATOR)
+		F.ODBC.conX!rst.Set!Title(V.uGlobal.uBI(v.Local.iK)!TITLE)
+		F.ODBC.conX!rst.Set!Description(V.uGlobal.uBI(v.Local.iK)!DESCRIPTION)
+		F.ODBC.conX!rst.Set!Start_DateTime(V.uGlobal.uBI(v.Local.iK)!START_DATETIME)
+		F.ODBC.conX!rst.Set!End_DateTime(V.uGlobal.uBI(v.Local.iK)!END_DATETIME)
+		F.ODBC.conX!rst.Set!Type(V.uGlobal.uBI(v.Local.iK)!TYPE)
+		F.ODBC.conX!rst.Set!Priority(V.uGlobal.uBI(v.Local.iK)!PRIORITY)
+		F.ODBC.conX!rst.Set!Closed_Flag(V.uGlobal.uBI(v.Local.iK)!CLOSED_FLAG)
+		F.ODBC.conX!rst.Set!Status(V.uGlobal.uBI(v.Local.iK)!STATUS)
+		F.ODBC.conX!rst.Update
+	F.Intrinsic.Control.Next(V.Local.iK)
+	F.ODBC.conX!rst.Close
+'	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uBI!BIRUNID,V.Global.iBIRUNID)
+'	'update field references
+'	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBI!BIRUNID,"BIRUNID")
+'	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBI!CUSTOMER,"Customer")
+'	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBI!TYPE,"TYPE")
+'	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBI!STATUS,"STATUS")
+'	'save our recordset to our GCG table
+'	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rst","Select * From GCG_BI_CRM_Events")
+'	F.Intrinsic.Variable.SaveUDTToRecordSet("conx","rst","v.uglobal.uBI")
+'	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.CallSub(Callbi)
+F.Intrinsic.Control.Else
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPrint_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.txtBegCust_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtBegCust_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+gui.SS_Form1.txtBegCust.SelectAll
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtBegCust_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtBegCust_GotFocus.End
+
+Program.Sub.txtBegCust_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtBegCust_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'copy contents of beg to end
+Function.Intrinsic.Control.If(v.Screen.SS_Form1!txtBegCust.Text.trim,<>,"")
+	Gui.SS_Form1.txtEndCust.Text(V.Screen.SS_Form1!txtBegCust.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtBegCust_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtBegCust_LostFocus.End
+
+Program.Sub.txtEndCust_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtEndCust_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+gui.SS_Form1.txtEndCust.SelectAll
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtEndCust_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtEndCust_GotFocus.End
+
+Program.Sub.cmdBegCustBr_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBegCustBr_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sContName.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.sContName.Set(v.Args.controlname)
+
+'show our browser
+f.Intrinsic.UI.Browser(205,"",v.Local.sRet)
+F.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"***CANCEL***")
+
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	Function.Intrinsic.Control.If(v.Args.controlname,=,"CMDBEGCUSTBR")
+		gui.SS_Form1.txtBegCust.Text(v.Local.sRet(0).Trim)
+		gui.SS_Form1.txtEndCust.Text(v.Local.sRet(0).Trim)
+	f.Intrinsic.Control.Else
+		gui.SS_Form1.txtEndCust.Text(v.Local.sRet(0).Trim)
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBegCustBr_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdBegCustBr_Click.End
+
+Program.Sub.SS_Form1_Unload.Start
+F.Intrinsic.Control.SetErrorHandler("SS_Form1_Unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'common
+f.ODBC.Connection!conC.Close
+'globa_ccc
+f.ODBC.Connection!conX.Close
+f.Intrinsic.Control.end
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("SS_Form1_Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+Program.Sub.SS_Form1_Unload.End
+
+Program.Sub.Check_Security.Start
+F.Intrinsic.Control.SetErrorHandler("Check_Security_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sSQL.Declare(String)
+v.Local.iID.Declare(Long)
+v.Local.sGroups.Declare(String)
+v.Local.iG.Declare(Long)
+
+F.Global.Security.GetUserId(v.Caller.User,v.Caller.CompanyCode,v.Local.iID)
+
+F.Intrinsic.String.Build("Select bVal From User_Options_Com Where USer_ID = '{0}' And Company = '{1}' And Option_ID = '1010'",v.Local.iID,v.Caller.CompanyCode,v.Local.sSQL)
+F.ODBC.Connection!conC.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(v.ODBC.conC!rst.EOF,<>,True)
+	'show what this is or not.
+	F.Intrinsic.Control.If(v.ODBC.conC!rst.FieldVal!bVal,=,True)
+		'they are CRM supervisor.
+		'exit this cause there is nothing more to do here.
+		f.ODBC.conC!rst.Close
+		f.Intrinsic.Control.ExitSub
+	Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+f.ODBC.conC!rst.Close
+
+'flag all our elements in this udt we will only unflag those that the user has access to either through group or user security
+f.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uBI)
+'so if we are still here they are not CRM supervisor.
+'so we have to figure out who we have access to, either through our Group level or user level.
+'lets first do groups?, then we will do
+F.Global.Security.GetUserGroups(v.Caller.User,v.Caller.CompanyCode,v.Local.sGroups)
+'here we have to do something a little bit fun.
+'split it, loop through each element adding an sql tick mark ' to beginning and end, then join it back by , as delimiter.
+F.Intrinsic.Control.If(v.Local.sGroups.Trim,<>,"")
+	Function.Intrinsic.String.Split(v.Local.sGroups,"*!*",v.Local.sGroups)
+	Function.Intrinsic.Control.For(v.Local.iG,0,v.Local.sGroups.UBound,1)
+		f.Intrinsic.String.Build("'{0}'",v.Local.sGroups(v.Local.iG).Trim,v.Local.sGroups(v.Local.iG))
+	F.Intrinsic.Control.Next(v.Local.iG)
+	'join them back
+	f.Intrinsic.String.Join(v.Local.sGroups,",",v.Local.sGroups)
+Function.Intrinsic.Control.EndIf
+'build our sql based on either user or group level customers.
+F.Intrinsic.String.Build("Select Distinct Customer From V_Customer_Master Where CRM_RES_LEV = '0' OR (CRM_RES_LEV = '1' And ASSGN_USR_GRP = '{0}') OR (CRM_RES_LEV = '2' AND ASSGN_USR_GRP IN({1}))",v.Caller.User,v.Local.sGroups,v.Local.sSQL)
+F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+f.Intrinsic.Control.DoUntil(V.ODBC.conX!rst.EOF,=,True)
+	f.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uBI!CUSTOMER,V.ODBC.conX!rst.FieldValTrim!Customer)
+	f.ODBC.conx!rst.MoveNext
+F.Intrinsic.Control.Loop
+
+'delete our udt flagged elemtns that are still flagged.
+f.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.ubi)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Check_Security_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Check_Security.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sParam.Declare(String)
+v.Local.sVals.Declare(String)
+
+'params
+'birunid
+'Start_Date
+'End_Date
+'All_Dates
+'All_Custs
+v.Local.sParam.Set("BIRUNID*!*Start_Date*!*End_Date*!*All_Dates*!*All_CUSTS*!*Open_Only")
+'values
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{4}*!*{5}",v.Global.iBIRUNID,v.Screen.SS_Form1!dtpStart.value,v.Screen.SS_Form1!dtpEnd.value,v.Screen.SS_Form1!chkAllDates.Value,v.Screen.SS_Form1!chkAllCust.Value,v.Screen.SS_Form1!chkOpen.Value,v.Local.sVals)
+
+f.Intrinsic.UI.CloseWaitDialog
+'call our printing of the report.
+F.Global.BI.RunReportPreProcessor(v.Global.iBIRUNID,v.Global.iBILOGID,v.Local.sParam,v.Local.sVals,"",-1,True,"",-1,"",-1,"","",v.Global.iBILOGID)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4046_CRM_Events_Report.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.CallBI.End
+
+Program.Sub.txtBegCust_KeyPressEnter.Start
+
+Program.Sub.txtBegCust_KeyPressEnter.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::CRM Events Report
+SS_Form1.CTRL{{NAME::dtpStart\\TYPE::6\\CAPTION::Beginning Date\\GROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::dtpEnd\\TYPE::6\\CAPTION::Ending Date\\GROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chkAllDates\\TYPE::9\\CAPTION::All Dates\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtBegCust\\TYPE::2\\CAPTION::Beginning Customers\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtEndCust\\TYPE::2\\CAPTION::Ending Customers\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdAdd\\TYPE::5\\CAPTION::Add\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdAdd\\TYPE::5\\CAPTION::Add\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdAdd\\TYPE::5\\CAPTION::Add\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdAdd\\TYPE::5\\CAPTION::Add\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chkAllCust\\TYPE::9\\CAPTION::All Customers\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::lvwCusts\\TYPE::7\\CAPTION::Customers\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdDelete\\TYPE::5\\CAPTION::Delete\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdClear\\TYPE::5\\CAPTION::Clear\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdPrint\\TYPE::5\\CAPTION::Print\\GROUP::-1\\BROWSER::0\\SIZE::1
+
+Program.Sub.ScreenSS.End
+Program.Sub.Comments.Start
+${$0$}$$}$TRT$}$02/09/2015 4:07:09 PM
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Quote 6243
+
+Coded by TRT
+2-9-15
+
+Program.Sub.Comments.End
+
